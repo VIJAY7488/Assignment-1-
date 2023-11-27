@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int fx(int x ){
+      int fxx;
+     fxx = 10*x + 10;
+        
+    }
+   
+
+
+int main()
+{    
+    int x ;
+   printf("Enter x:");
+    scanf("%d",&x);
+    
+    
+    printf("f(%d) = %d ",x,fx(x));
+
+    return 0;
+}
