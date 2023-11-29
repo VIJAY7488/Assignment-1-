@@ -1,0 +1,50 @@
+#include<stdio.h>
+
+
+float calculatePower(float base,float power){
+    float result=1;
+    for(int i=0;i<power;i++){
+        result*=base;
+    }
+    return result;
+}
+float tcsinvestment(float tcs_investment,float tcs_rate,int tcs_time ){
+    int tcs_timeTime=12;
+    float mR=tcs_rate/12;
+
+    float ci=0;
+    for(int i=0;i<tcs_timeTime;i++){
+        float mid=calculatePower((1+mR/100),i+1);
+        ci+=tcs_investment*mid-tcs_investment;
+    }
+    return ci;
+}
+
+float infosysinvestment(float infosys_investment,float infosys_rate,int infosys_time ){
+    int infosys_timeTime=12;
+    float mR=infosys_rate/12;
+
+    float ci=0;
+    for(int i=0;i<infosys_timeTime;i++){
+        float mid=calculatePower((1+mR/100),i+1);
+        ci+=infosys_investment*mid-infosys_investment;
+    }
+    return ci;
+}
+
+int main (void){
+    float tcs_investment = 10000;
+    float tcs_rate = 6;
+    float tcs_time = 12;
+    
+    float infosys_investment = 5000;
+    float infosys_rate = 5;
+    float infosys_time = 12;
+    
+    float tcsprofit = tcsinvestment(tcs_investment,tcs_rate,tcs_time);
+    float infosysprofit = infosysinvestment(infosys_investment,infosys_rate,infosys_time);
+    float finalprofit = tcsprofit + infosysprofit;
+    float finalamount = tcs_investment*tcs_time + infosys_investment*infosys_time + finalprofit;
+    printf("Final Amount : %0.2f\n",finalamount);
+    printf("Total Profit : %0.2f",finalprofit);
+}
