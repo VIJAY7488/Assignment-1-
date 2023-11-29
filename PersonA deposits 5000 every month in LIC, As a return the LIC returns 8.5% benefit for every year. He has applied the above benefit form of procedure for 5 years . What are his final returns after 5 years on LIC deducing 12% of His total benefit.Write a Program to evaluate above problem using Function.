@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<math.h>
+
+float calculatePower(float base,float power){
+    float result=1;
+    for(int i=0;i<power;i++){
+        result*=base;
+    }
+    return result;
+}
+
+float sip(float p,float r,int t ){
+    int tTime=5*12;
+    float mR=r/12;
+
+    float ci=0;
+    for(int i=0;i<tTime;i++){
+        float mid=calculatePower((1+mR/100),i+1);
+        ci+=p*mid-p;
+    }
+    return ci-ci*0.12;
+}
+
+int main(){
+    float p=5000;
+    float r=8.5;
+    int t=5;
+    float final=sbi_sip(p,r,t);
+    printf("Final Amount :%0.2f",final);
+
+    return 0;
+}
