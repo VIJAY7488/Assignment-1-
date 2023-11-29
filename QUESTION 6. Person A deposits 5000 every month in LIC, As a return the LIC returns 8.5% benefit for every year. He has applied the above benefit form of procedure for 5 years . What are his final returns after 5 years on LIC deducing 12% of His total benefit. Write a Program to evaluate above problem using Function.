@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<math.h>
+
 
 float calculatePower(float base,float power){
     float result=1;
@@ -9,7 +9,7 @@ float calculatePower(float base,float power){
     return result;
 }
 
-float sip(float p,float r,int t ){
+float Licsip(float p,float r,int t ){
     int tTime=5*12;
     float mR=r/12;
 
@@ -25,8 +25,11 @@ int main(){
     float p=5000;
     float r=8.5;
     int t=5;
-    float final=sbi_sip(p,r,t);
-    printf("Final Amount :%0.2f",final);
+    float profit=Licsip(p,r,t);
+    float final = p*t*12 + profit;
+    printf("Final Amount :%0.2f\n",final);
+    printf("Total Profit :%0.2f",profit);
 
     return 0;
 }
+       
