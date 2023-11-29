@@ -16,7 +16,7 @@
                large = d;
           }
 
-         printf("%d\n",large);
+         
          int ans=a;
          if (b > ans && b < large) {
         ans = b;
