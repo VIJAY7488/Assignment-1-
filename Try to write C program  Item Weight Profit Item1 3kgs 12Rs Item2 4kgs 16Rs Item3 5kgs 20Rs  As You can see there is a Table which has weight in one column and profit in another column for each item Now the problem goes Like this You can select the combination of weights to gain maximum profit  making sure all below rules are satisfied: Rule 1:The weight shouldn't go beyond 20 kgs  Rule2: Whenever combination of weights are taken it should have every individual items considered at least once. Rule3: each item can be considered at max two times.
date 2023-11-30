@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int calculatePrice(int p1,int p2,int p3){
+    return (12*p1+16*p2+20*p3);
+}
+
+int CalWei(int w1,int w2,int w3){
+    return w1*3+w2*4+w3*5;
+}
+
+void checkMaxp(int t1,int t2,int t3){
+int tw=CalWei(t1,t2,t3);
+int tP=calculatePrice(t1,t2,t3);
+if(t1<=2 && t2<= 2 && t3<=2){
+    if(tw<=20){
+        if(tP==80){
+            printf("Right combination,Total Weight %d And Maximum Profit %d. ",tw,tP);
+        }
+    }
+}
+else{
+    printf("Enter Other Combination!");
+}
+
+}
+int main(){
+    int t1;
+    int t2;
+    int t3;
+
+    printf("Enter item 1 count: ");
+    scanf("%d",&t1);
+    printf("Enter item 1 count: ");
+    scanf("%d",&t2);
+    printf("Enter item 1 count: ");
+    scanf("%d",&t3);
+
+    checkMaxp(t1,t2,t3);
+    return 0;
+}
+
